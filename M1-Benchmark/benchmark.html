@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+
+    HTML EXERCISES
+
+    1) Create a title for the page
+    2) Create a heading
+    3) Create an ordered list
+    4) Create a table with 5 columns and 4 rows
+    5) Add an image to each second cell of every row
+    6) Add a anchor link for every image
+    7) Merge together 2 table cells
+    8) Divide the page using a horizontal line
+    9) Create a container with a nested paragraph and a nested unordered list
+    10) Create a footer with some information about the page creator 
+
+    CSS EXERCISES
+
+    11) Give a maximum width to the body and center it in the page
+    12) Set every h1 to be centered
+    13) Change the color of each link in the page
+    14) Create a class with a border
+    15) Set table to have rounded corners
+    16) Add margin between every paragraph
+    17) Create a class which change font size and boldness
+    18) Create a class to hide a content
+    19) Add a green border to each td
+    20) Add a dotted red border to each tr (note: tr does not accept a border property )-->
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1-BENCHMARK</title>
+    <link rel="stylesheet" href="">
+    <style>
+
+        body{
+            max-width: 500px;
+            margin: 0 auto;
+            
+        }
+        h1{
+            text-align: center;           
+        }
+        a{
+            color: blue;
+        }
+        table{
+            margin-left: 10px;
+            border: 3px solid black;
+            border-radius: 15%;
+            overflow: hidden;
+            border-spacing: 0px;
+            
+        }
+        th, td{
+            border: 1px solid green;
+            padding: 15px;           
+            background-color: white;
+        }
+        .border-bottom {
+            border-bottom: none;
+        }
+        .table{
+            border:1px;
+        }
+        .font{
+            font-size: 15px; 
+            font-weight: bold;
+        }
+        p{
+            margin-top: 30px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        .hide{
+            display: none;
+        }
+        tr{
+            outline :thin dotted red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>2021 Car Models</h1>
+    <ol>
+        <li>Ford Mustang</li>
+        <li>Genesis G80</li>
+        <li>BMW i4</li>        
+        <li>Kia K5 </li>
+    </ol>
+    <table>
+       <tbody>
+        <tr>
+            <td>Ford Mustang</td>
+            <td>
+                <a href="https://www.kbb.com/reviews/2021-ford-bronco/"><img src="https://www.kbb.com/wp-content/uploads/2020/11/2021-ford-mustang-mach-e-front-right-3q-16x9-1.jpg?resize=763,429" height="50"></a>
+            </td>
+            <td>petrol</td>
+            <td>4-door</td>
+            <td>$29,995</td>
+        </tr>
+        <tr class='border-bottom'>
+            <td>Genesis G80</td>
+            <td>
+                <a href="https://www.kbb.com/car-news/2021-genesis-g80-first-look/"><img src="https://www.kbb.com/wp-content/uploads/2020/03/1a-2021-Genesis-G80-oem-700x500.jpg" height="65" ></a>
+            </td>            
+            <td colspan="2">electric 4-door</td>
+            <td>$47,700</td>
+        </tr>
+        <tr>
+            <td>BMW i4</td>
+            <td>
+                <a href="https://www.kbb.com/car-news/2021-bmw-i4/"><img src="https://www.kbb.com/wp-content/uploads/2021/03/2022-bmw-ix-front-three-quarter.jpg?resize=763,429" height="50"></a>
+            </td>
+            <td>electric</td>
+            <td>4-door</td>
+            <td>$43,995</td>
+        </tr>
+        <tr>
+            <td>Kia K5 </td>
+            <td>
+                <a href="https://www.kbb.com/reviews/2021-kia-k5/"><img src="https://www.kbb.com/wp-content/uploads/2020/06/2021-kia-k5-driving-front-3qtr-700x500.jpg" width ="90"></a>
+            </td>
+            <td>petrol</td>
+            <td>4-door</td>
+            <td>$31,710</td>
+        </tr>
+       </tbody> 
+    </table>
+    <hr>
+    <div>
+        <p>The above listed are just a few of my favorite 2021 car models. There are still so many yet to be mentioned.</p>
+        <ul>
+            <li>Acura TLX</li>
+            <li>Cadillac Escalade</li>
+            <li>Chevrolet Trailblazer</li>
+            <li>Ford F-150</li>
+            <li>GMC Yukon</li>
+        </ul>
+    </div id = container>
+    <footer>
+        <p>By: Oluwabusola Jibodu</p>
+        <p><a href="mailto:busola.jibodu@gmail.com">Send an email</a></p>
+    </footer>
+    <script>
+
+    //DOM 
+
+    //31) Get element with ID "container" from the page
+
+    document.getElementById("container")
+
+
+    //32) Get every "td" from the page
+
+    document.getElementsByTagName("td")
+
+    //33) Create a cycle that prints the text inside every td of the page
+
+    const cells = document.getElementsByTagName("td")
+
+    const everyTd = function(){
+    for (let i= 0; i<cells.length; i++){
+        cells[i].innerText()
+    }
+    }
+        everyTd()
+    
+    //34) Write a function to change the heading of the page
+
+    let headingOfPage = document.getElementsByTagName(h1)
+    const changeText = function(newtext){
+        headingOfPage.innerHTML = newtext
+    };
+        changeText("Travel Destinations");
+
+
+    //35) Write a function to add an extra row to the table
+
+    
+    const addNewRow = function(){ 
+        let parentTag = document.getElementsByTagName("tbody")
+        let newRow = document.createElement("tr")    
+
+        for (let i = 0; i<5; i++) {
+            newTd = document.createElement("td")
+            newTd.innerText = "Text"
+            newRow.appendChild(newTd)
+        }
+
+        parentTag.appendChild(newRow)
+    };
+        addNewRow();
+
+
+    //36) Write a function to add the class "test" to each row in the table
+
+
+    let allRows = document.getElementsByTagName("tr")
+    const addClassToRow = function () {
+
+        allRows.classList.add("test");
+    };
+
+
+
+    //37) Write a function to add a red background to every link in the page
+
+    let allLinks = document.getElementsByTagName("a")
+
+    const addBackground = function(){
+
+        for (let i = 0; i < allLinks.length; i++) {
+
+        allLinks[i].style.backgroundColor = "red";
+        }
+    }
+
+    //38) Console log "Page loaded" when the page is correctly loaded
+    window.onload = function () {
+        console.log()
+    }
+
+    //39) Write a function to add new items to a UL
+
+    let newItems = document.createElement("li");
+    newItems.innerText = "this is a new item"
+
+    const addNewItem = function(){ 
+        let list = document.getElementsByTagName("ul")
+
+        list.appendChild(newItems)
+    };
+        addNewItem();
+        
+    //40) Write a function to empty a list
+    const emptyList = function() { 
+
+    while(list.length > 0) {
+    list.pop();
+    }
+}
+
+
+
+//EXTRA 
+
+//41) Add an eventListener to alert when the mouse is over a link, displaying the URL
+
+
+//42) Add a button to hide every image on the page
+
+//43) Add a button to hide and show the table from the page
+
+//44) Write a function to sum every number inside the TD (if the content is numeric)
+
+//45) Delete the last letter from the title each time the user clicks on it
+
+//46) Change a single TD background color when the user clicks on it
+
+//47) Add a button DELETE, on click it should delete a random TD from the page
+//48) Add a pink border to a cell when the mouse is over it
+//49) Write a function to add a table with 4 rows and 3 columns programmatically
+//50) Write a function to remove the table from the page-->
+
+    </script>
+
+
+
+</body>
+</html>
