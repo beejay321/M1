@@ -1,24 +1,32 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        
-        <title>Creating A Smartphone Shop Website</title>
-        <style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            html {
-      
-              font-family: sans-serif;
-      
-              color: #333;
-              background-color: aliceblue;
-      
-            }     
-        </style>
-    </head>
+    <title>Creating A Smartphone Shop Website</title>
+    <style>
+      html {
+        font-family: sans-serif;
 
-     <!--You have been assigned to the creation of a Smartphone Shop Website. The homepage you're about to write is just a showcase of the products of the shop with some extra information. 
+        color: #333;
+        background-color: aliceblue;
+      }
+      .new-class {
+        color: red;
+        text-decoration: line-through;
+        font-size: larger;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+      tbody td:last-child{
+          color-yellow
+      }
+    </style>
+  </head>
+
+  <!--You have been assigned to the creation of a Smartphone Shop Website. The homepage you're about to write is just a showcase of the products of the shop with some extra information. 
      No shopping cart / checkout features are required. 
      Complete exercises from 1 to 6 with just plain HTML.
 
@@ -30,111 +38,190 @@
 
      EX4.: Add links to existing Amazon products for each item in the table-->
 
+  <body>
+    <h1>GreenPath</h1>
 
- 
+    <table>
+      <thead>
+        <td>Title</td>
+        <td>
+          <a
+            href="https://www.amazon.de/-/en/Samsung-Galaxy-Prism-Version-P-Standard/dp/B07MTXWLRP/ref=sr_1_3?dchild=1&keywords=samsung+galaxy+s10&qid=1615931884&sr=8-3"
+            >Samsung Galaxy S10</a
+          >
+        </td>
+        <td>
+          <a href="https://www.amazon.de/dp/B08L5QZ696/ref=de_a_iphone3_2"
+            >Iphone 12</a
+          >
+        </td>
+        <td>
+          <a
+            href="https://www.amazon.de/-/en/Mi-Note-10-Lite-Midnight/dp/B08883MQWC/ref=sr_1_4?crid=2AYJ0NX5X6TZ3&dchild=1&keywords=xiaomi+note+10+lite&qid=1615932268&sprefix=xiaomi+note+%2Caps%2C198&sr=8-4"
+            >Xiaomi Note 10</a
+          >
+        </td>
+        <td>
+          <a
+            href="https://www.amazon.de/-/en/HUAWEI-Dual-Smartphone-Android-128gb/dp/B07PVG9QMW/ref=sr_1_3?crid=3KAMTE16A4OZI&dchild=1&keywords=huawei+p30+pro&qid=1615932556&sprefix=huawei%2Caps%2C196&sr=8-3"
+            >Huawei p30 pro</a
+          >
+        </td>
+        <td>
+          <a
+            href="https://www.amazon.de/-/en/Smartphone-Camera-Splash-proof-Android-Stainless/dp/B07B69SLMB/ref=sr_1_1?dchild=1&keywords=nokia+8+sirocco+128gb&qid=1615932925&sr=8-1"
+            >Nokia 8 Sirocco</a
+          >
+        </td>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Image</td>
+          <td>
+            <img
+              src="https://cdn.pocket-lint.com/r/s/970x/assets/images/147150-phones-review-review-samsung-galaxy-s10-5g-image1-yjuo9yskdx-jpg.webp"
+              height="100px"
+            />
+          </td>
+          <td>
+            <img
+              src="https://fdn.gsmarena.com/imgroot/reviews/20/apple-iphone-12-pro-max/lifestyle/-1200w5/gsmarena_008.jpg"
+              height="100px"
+            />
+          </td>
+          <td>
+            <img
+              src="https://www.connect.de/bilder/118664260/500x300-c0/mi-note-10-design.jpg"
+              height="100px"
+            />
+          </td>
+          <td>
+            <img
+              src="https://www.slashgear.com/wp-content/uploads/2019/09/newhuaweigagwe-1280x720.jpg"
+              height="100px"
+            />
+          </td>
+          <td>
+            <img
+              src="https://d3nevzfk7ii3be.cloudfront.net/igi/dVFKKLjPPXoVqwMW.large"
+              height="100px"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>
+            Universal monitor arm - HUANUO gas spring monitor arm for dual 13 to
+            27 inches (diagonal between 33-68.5 cm) LED LCD monitors with VESA
+            mounting patterns of 75x75 mm and 100x100 mm.
+          </td>
+          <td>
+            Multifunctional monitor stand – This monitor stand consists of an
+            environmentally friendly wooden plate and 2 cushions for comfort and
+            support. It can be used on the bed, on the sofa or when travelling
+          </td>
+          <td>
+            Robust and stable – The table is made from natural bamboo –
+            Environmentally Friendly; water-repellent and easy-care.
+          </td>
+          <td>
+            Monitor stand with column-style stackable legs to choose your height
+            Adjustable height up to 12.5 cm (in 2.5 cm increments)
+          </td>
+          <td>
+            FULL ULTIMATE SINGLE ARM - The monitor arm can be easily adjusted to
+            fit almost any LCD/LED computer monitor with a size of 35" or
+            smaller, weight up to 12kg
+          </td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>€599.99</td>
+          <td>€986.02</td>
+          <td>€329.90</td>
+          <td>€525.99</td>
+          <td>€399.99</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <body> 
-        <h1>GreenPath</h1>
+    <!--EX5.: Add a footer with the address and the name of your shop-->
+    <br />
+    <footer>
+      <div>
+        <h4>GreenPath Limited</h4>
+        <p>75 Williamsroad 22398 Liverpool</p>
+      </div>
+    </footer>
+    <br />
 
-       
-        <table>
-            <thead>                
-                <td>Title</td>
-                <td><a href="https://www.amazon.de/-/en/Samsung-Galaxy-Prism-Version-P-Standard/dp/B07MTXWLRP/ref=sr_1_3?dchild=1&keywords=samsung+galaxy+s10&qid=1615931884&sr=8-3">Samsung Galaxy S10</a></td>
-                <td><a href = "https://www.amazon.de/dp/B08L5QZ696/ref=de_a_iphone3_2" >Iphone 12</a></td>
-                <td><a href = "https://www.amazon.de/-/en/Mi-Note-10-Lite-Midnight/dp/B08883MQWC/ref=sr_1_4?crid=2AYJ0NX5X6TZ3&dchild=1&keywords=xiaomi+note+10+lite&qid=1615932268&sprefix=xiaomi+note+%2Caps%2C198&sr=8-4" >Xiaomi Note 10</a></td>
-                <td><a href = "https://www.amazon.de/-/en/HUAWEI-Dual-Smartphone-Android-128gb/dp/B07PVG9QMW/ref=sr_1_3?crid=3KAMTE16A4OZI&dchild=1&keywords=huawei+p30+pro&qid=1615932556&sprefix=huawei%2Caps%2C196&sr=8-3" >Huawei p30 pro</a></td>
-                <td><a href = "https://www.amazon.de/-/en/Smartphone-Camera-Splash-proof-Android-Stainless/dp/B07B69SLMB/ref=sr_1_1?dchild=1&keywords=nokia+8+sirocco+128gb&qid=1615932925&sr=8-1" >Nokia 8 Sirocco</a></td>                
-            
-            </thead>
-            <tbody>
-            <tr>
-                <td>Image</td>
-                <td><img src="https://cdn.pocket-lint.com/r/s/970x/assets/images/147150-phones-review-review-samsung-galaxy-s10-5g-image1-yjuo9yskdx-jpg.webp" height="100px"/></td>
-                <td><img src="https://fdn.gsmarena.com/imgroot/reviews/20/apple-iphone-12-pro-max/lifestyle/-1200w5/gsmarena_008.jpg" height="100px"/></td> 
-                <td><img src="https://www.connect.de/bilder/118664260/500x300-c0/mi-note-10-design.jpg" height="100px"/></td>
-                <td><img src="https://www.slashgear.com/wp-content/uploads/2019/09/newhuaweigagwe-1280x720.jpg" height="100px"/></td>
-                <td><img src="https://d3nevzfk7ii3be.cloudfront.net/igi/dVFKKLjPPXoVqwMW.large" height="100px"/></td>            
-            </tr>
-            <tr>
-                <td>Description </td>
-                <td>Universal monitor arm - HUANUO gas spring monitor arm 
-                    for dual 13 to 27 inches (diagonal between 33-68.5 cm) 
-                    LED LCD monitors with VESA mounting patterns of 75x75 mm and 100x100 mm.</td> 
-                <td>Multifunctional monitor stand – This monitor stand consists of an environmentally friendly wooden plate and 2 cushions for comfort and support. It can be used on the bed, on the sofa or when travelling</td>  
-                <td>Robust and stable – The table is made from natural bamboo – Environmentally Friendly; water-repellent and easy-care.</td>
-                <td>Monitor stand with column-style stackable legs to choose your height
-                    Adjustable height up to 12.5 cm (in 2.5 cm increments)</td>  
-                <td>FULL ULTIMATE SINGLE ARM - The monitor arm can be easily adjusted to fit almost any LCD/LED computer monitor with a size of 35" or smaller, weight up to 12kg</td>             
-            </tr>
-            <tr>
-                <td>Price</td>
-                <td>€599.99</td>
-                <td>€986.02</td> 
-                <td>€329.90</td> 
-                <td>€525.99</td> 
-                <td>€399.99</td>                           
-            </tr>       
-       
-         </table>
+    <!--EX6.: Add a message board where the user can type a message in it (no real posting/saving features required!)-->
+    <form>
+      <label>Type a message:</label>
+      <input type="text" name="message" />
+    </form>
 
-     <!--EX5.: Add a footer with the address and the name of your shop-->
+    <script>
+      //EXTRA (use JavaScript code here)
 
-         <footer>
-            <p>CONTACT <br> GreenPath Limited <br> 75 Williamsroad <br> 22398 Liverpool</p>
-          </footer>
+      //EX7.: Write a function to change the h1 text
 
-     <!--EX6.: Add a message board where the user can type a message in it (no real posting/saving features required!)-->
-          <form>
-            <label>Type a message:</label>
-            <input type="text" name="message" >
-            
-          </form>
+      const changeText = function () {
+        document.querySelector("h1").innerText = "Goodit ventures";
+      };
+      changeText();
 
-          <script>
+      //EX8.: Write a function to change the page background color
 
-     //EXTRA (use JavaScript code here)
+      const changeBackground = function (color) {
+        document.querySelector("body").style.backgroundColor = color;
+      };
+      changeBackground("lightgrey");
 
-     //EX7.: Write a function to change the h1 text
-             
-               const changeText = function(newText) { 
-               document.querySelector("h1").innerText = newtext
-               }s
-               changeText("Goodit ventures");
-           
-     //EX8.: Write a function to change the page background color
-               
-              const changeBackground = function(color) {
-              document.body.style.backgroundColor = color;
-              }
-              changeBackground('yellow');
+      //EX9.: Write a function to change the footer address with a fake one
 
-     //EX9.: Write a function to change the footer address with a fake one
+      function changeFooter() {
+        document.querySelector("div p").innerHTML =
+          "89 Highway 55578 Birmingham";
+      }
+      changeFooter();
 
-               function changeFooter(Fake) { 
-               document.getElementsByTagName("Footer").innerHTML = Fake
-               }
-               changeFooter("Goodit ventures, 89 Highway 55578 Birmingham"); 
+      //EX10.: Write a function to add a CSS class to every Amazon link
 
-     //EX10.: Write a function to add a CSS class to every Amazon link
-                 let links = document.querySelectorAll("a")
-            
-                 const addClass = function() {               
-                 links.classList.add("small-font")                 
-                 }
-                 addClass()
-                 
-             
-     //EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+      const addClass = function () {
+        for (let i = 0; i < document.querySelectorAll("a").length; i++) {
+          document.querySelectorAll("a")[i].classList.add("new-class");
+        }
+        //for(let eachLink of document.querySelectorAll("a")) {
+        // eachLink.classList.add("new-class")
+      };
+      addClass();
 
+      //EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+      const toggleImage = function () {
+        for (let eachImage of document.querySelectorAll("img")) {
+          eachImage.classList.toggle("hidden");
+        }
+      };
+      toggleImage();
 
+      //EX12: Write a function to color the price of each product in a different one every time it's invoked
 
-     //EX12: Write a function to color the price of each product in a different one every time it's invoked
+      const colorPrice = function () {
+        const newColor = getColor();
+        for (let eachPrice of document.querySelectorAll("div h4")) {
+          eachPrice.style.color = newColor;
+        }
+      };
+      const getColor = function () {
+        const red = Math.floor(Math.random() * 255);
+        const green = Math.floor(Math.random() * 255);
+        const blue = Math.floor(Math.random() * 255);
 
+        return "rgb(" + red + "," + green + "," + blue + ")";
+      };
 
-
-          </script>
-
-        
-    </body>
-    </html>
+      colorPrice();
+    </script>
+  </body>
+</html>

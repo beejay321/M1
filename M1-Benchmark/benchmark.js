@@ -4,7 +4,8 @@
 const printName = function () {
   let x = "John";
   let y = "Doe";
-  let result = x + " " + "<>" + " " + y;
+  // let result = x + " " + "<>" + " " + y;
+  let result = `${x + "<>" + y}`;
   return result;
 };
 console.log(printName());
@@ -64,39 +65,59 @@ console.log(randomArray);
 
 //27) Write a function to get the MAX and the MIN from the previously created array
 
-const maxMin = function () {
-  console.log(Math.max(randomArray));
-  console.log(Math.min(randomArray));
+const maxMin = function (numbers) {
+  // console.log(Math.max(randomArray));
+  // console.log(Math.min(randomArray));
+  let max = numbers[0];
+  let min = numbers[0];
+  for (let i = 0; i < randomArray.length; i++) {
+    if (numbers[i] > max) {
+      max = number[i];
+    }
+    if (numbers[i] < min) {
+      min = number[i];
+    }
+  }
+  return { max, min };
 };
-maxMin();
+console.log(maxMin(randomArray));
 
 //28) Create an array of arrays, in which every array has 10 random numbers
 
-const arrayOfArrays = []
-    for(let i = 0; i<5; i++) {
-        
-const newRandomArray = [];
-for (let j = 0; j < 10; j++) {
-  newRandomArray.push(Math.floor(Math.random() * 100) + 1);
+const arrayOfArrays = [];
+for (let i = 0; i < 5; i++) {
+  const newRandomArray = [];
+  for (let j = 0; j < 10; j++) {
+    newRandomArray.push(Math.floor(Math.random() * 100) + 1);
+  }
+  arrayOfArrays.push(newRandomArray);
 }
-arrayOfArrays.push(newRandomArray)
-}
-console.log(arrayOfArrays)
-
-
+console.log(arrayOfArrays);
 
 //29) Create a function that gets 2 arrays and returns the longest one
 const compareArrLength = function (arr1, arr2) {
   if (arr1 > arr2) {
-    return arr1 
-  } else if (arr2 > arr1){
-    return arr2
+    return arr1;
+  } else if (arr2 > arr1) {
+    return arr2;
   } else {
-    console.log("same lenght") 
+    console.log("same lenght");
   }
-
-}
+};
 
 //30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
-
-
+let sum3 = 0;
+let sum4 = 0;
+const higherSum = function (arr3, arr4) {
+  for (let i = 0; i < arr3.length; i++) {
+    sum3 = +arr3[i];
+  }
+  for (let i = 0; i < arr3.length; i++) {
+    sum4 = +arr4[i];
+  }
+  if (sum3 > sum4) {
+    return sum3;
+  } else {
+    return sum4;
+  }
+};

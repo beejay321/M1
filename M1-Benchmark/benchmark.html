@@ -83,6 +83,9 @@
         tr{
             outline :thin dotted red;
         }
+        .d-none {
+            display: none;
+        }
 
     </style>
 </head>
@@ -167,14 +170,14 @@
 
     const everyTd = function(){
     for (let i= 0; i<cells.length; i++){
-        cells[i].innerText()
+        cells[i].innerText= "5"
     }
     }
         everyTd()
     
     //34) Write a function to change the heading of the page
 
-    let headingOfPage = document.getElementsByTagName(h1)
+    let headingOfPage = document.getElementsByTagName("h1")
     const changeText = function(newtext){
         headingOfPage.innerHTML = newtext
     };
@@ -185,15 +188,14 @@
 
     
     const addNewRow = function(){ 
-        let parentTag = document.getElementsByTagName("tbody")
+        let parentTag = document.querySelector("tbody")
         let newRow = document.createElement("tr")    
 
         for (let i = 0; i<5; i++) {
-            newTd = document.createElement("td")
-            newTd.innerText = "Text"
+            let newTd = document.createElement("td")
+            newTd.innerText = i + 2
             newRow.appendChild(newTd)
         }
-
         parentTag.appendChild(newRow)
     };
         addNewRow();
@@ -224,7 +226,7 @@
 
     //38) Console log "Page loaded" when the page is correctly loaded
     window.onload = function () {
-        console.log()
+        console.log("Page Loaded")
     }
 
     //39) Write a function to add new items to a UL
@@ -233,7 +235,7 @@
     newItems.innerText = "this is a new item"
 
     const addNewItem = function(){ 
-        let list = document.getElementsByTagName("ul")
+        let list = document.querySelector("ul")
 
         list.appendChild(newItems)
     };
@@ -241,10 +243,8 @@
         
     //40) Write a function to empty a list
     const emptyList = function() { 
-
-    while(list.length > 0) {
-    list.pop();
-    }
+        let list = document.querySelector("ul")
+        list.innerHTML = ""    
 }
 
 
@@ -252,18 +252,71 @@
 //EXTRA 
 
 //41) Add an eventListener to alert when the mouse is over a link, displaying the URL
+let links = document.querySelectorAll("a")
+const alertURL = function() {
+    links.forEach(function(link) {
+        link.onmouseover = function(event) {
+            alert(event.target.href)            
+        }
+    })
+}
 
 
 //42) Add a button to hide every image on the page
+const hideImage = function() {
+    let btn = document.createElement("button")
+    btn.innerText = "Hide Image"
+    btn.onclick = function() {
+        const imgs = document.querySelector("img")
+        imgs.forEach(function(img) {
+            img.classList.add("d-none")
+        })
+    }
+    const body = document.querySelector("body")
+    body.appendChild(btn)
+}
+hideImage()
 
 //43) Add a button to hide and show the table from the page
+const hideAndShow = function () {
+    let newBtn = document.createElement("button")
+    newBtn.innerText = "Toggle table"
+    newBtn.onclick = function() {
+        let table = document.querySelector("table")
+        table.classlist.toggle("d-none")
+    }
+    let body = document.querySelector("body")
+    body.appendChild(newBtn)
+}
+hideAndShow()
 
 //44) Write a function to sum every number inside the TD (if the content is numeric)
-
+const sumTd = function() {
+    let allTd = document.querySelectorAll("td")
+    
+    sum = 0
+    for ( let i = 0; i< allTd.length; i++ ) {
+        let numbers = parseInt(allTd[i])
+        let isNotANumber = isNaN(allTd[i])
+        if (!isNotANumber) {   
+        sum = sum + numbers
+    }
+}
+// alert(sum)
+}
+sumTd()
 //45) Delete the last letter from the title each time the user clicks on it
-
+const deleteLast = function() {
+    let title = document.querySelector("h1")
+    title.onclick = function() {
+      title.innerText =  title.innerText.slice(0, -1)
+    }
+}
+deleteLast()
 //46) Change a single TD background color when the user clicks on it
-
+const changeTDbackground = function() {
+    
+}
 //47) Add a button DELETE, on click it should delete a random TD from the page
 //48) Add a pink border to a cell when the mouse is over it
 //49) Write a function to add a table with 4 rows and 3 columns programmatically

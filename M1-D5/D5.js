@@ -29,7 +29,7 @@ let sum = num1 + num2
 */
 
 let random = Math.random() * 20
-
+console.log(random)
 
 /* Ex.D
     Create a variable called "me" and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
@@ -74,8 +74,20 @@ dice()
 const whoIsBigger = function (smallNo, bigNo) {
     return Math.max(smallNo, bigNo)
 }
-console.log(whoIsBigger(23, 50))
+// console.log(whoIsBigger(23, 50))
 
+
+const whoIsBiggerr = function (sN, bN) {
+  if (sN > bN ) {
+    result = sN
+  } else {
+    result = bN
+  } return result
+  
+  
+}
+// console.log(whoIsBiggerr(5,10))
+    
 /* Ex.3
     Write a function called "splitMe" which receives a string as a parameter and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]*/
@@ -83,8 +95,8 @@ console.log(whoIsBigger(23, 50))
 const splitMe = function (myString) {
   return myString.split(" ")
 }
-console.log(splitMe("I love coding"))
-console.log(splitMe("I did not believe it would work "))
+// console.log(splitMe("I love coding"))
+// console.log(splitMe("I did not believe it would work "))
 
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value 
@@ -100,7 +112,7 @@ if (aBool === true){
   return removeLastLetter
 }
 }
-console.log(deleteOne("Feeling Good", false))
+// console.log(deleteOne("Feeling Good", false))
 
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
@@ -138,6 +150,14 @@ console.log(deleteOne("Feeling Good", false))
 }
 isThisAnEmail(busola.jibodu@gmail.com)
 
+const day = function() {
+  days = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"]
+  let date = new Date
+  let today = date.getDay()
+  return days[today]
+}
+day()
+
 /* Ex.7
 
    Write a function called "whatDayIsIt" that should return the current day of the week.*/
@@ -158,12 +178,26 @@ console.log(whatDayIsIt())
     Example: RollTheDices(3) => returns {
         sum: 10
         values: [3, 3, 4]
-    }
-
-const rollTheDices = function(numberOfTimes) {
- console.log(Math.floor(Math.random(numberOfTimes) * 6) + 1)
+    }*/
+    /* const dice = function(){
+    console.log(Math.floor(Math.random() * 6) + 1)
 }
-rollTheDices(5)*/
+dice()
+     */
+ 
+const rollTheDices = function(numberOfTimes) {
+let result = {
+sum: 0,
+values: []
+}
+  for (let i= 0; i<numberOfTimes; i++){
+ let roll = (Math.floor(Math.random(numberOfTimes) * 6) + 1)
+result.sum =+ roll
+ result.values.push(roll)
+}
+ return result
+}
+console.log(rollTheDices(5))
 
 
 /* Ex.9
@@ -171,18 +205,14 @@ rollTheDices(5)*/
    days passed since that date.
 */
 
-const howManyDays = function() {
-let date1 = new Date("06/30/2019"); 
-let date2 = new Date("07/30/2019"); 
+const howManyDays = function(theDate) {
+let today = new Date(); 
+Difference_In_Time = today - theDate
    
    let  Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
-  
-document.write("Total number of days between dates  <br>"
-               + date1 + "<br> and <br>" 
-               + date2 + " is: <br> " 
-               + Difference_In_Days); 
-  }
 
+  }
+  
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
@@ -203,10 +233,11 @@ console.log(isTodayMyBirthday())
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, 
    and returns the given object after deleting its property named as the given string.
-
+*/
 const deleteProp = function (object,string) {
-  let result = delete object.name
-}*/
+  delete object.string
+  return object
+}
 
 const movies = [
   {
@@ -326,48 +357,131 @@ const movies = [
 
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
-
-   //const olderMovie = function () {
-
-  let yearOfMovies = movies.filter(Year)
-       console.log(year)
-   */
+*/
+   const olderMovie = function () {
+  let year = [];
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    let eachYear = parseInt(eachMovie.Year);
+  }
+  return;
+};
+   
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
-let countMovies = movies.length
- console.log(countMovies)
+const countMovies = function() {
+ let noOfMovies = movies.length
+ return noOfMovies
+ }
+ console.log(countMovies())
 
  
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
 */
+let titles = []
+const onlyTitle = function() {
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    let eachTitle = eachMovie.Title;
+    titles.push(eachTitle)
+  }
+  return titles
+}
  
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this millennium.
 */
+const onlyInThisMillennium = function() {
+  let thisMillMovies = []
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    // let eachYear = parseInt(eachMovie.Year);
+    if (parseInt(eachMovie.Year) > 1999 ) {
+       thisMillMovies.push(eachMovie);
+    }
+  }
+  return thisMillMovies
+}
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
-
+const getMovieById = function(id) {
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+     let eachId = eachMovie.imdbID;
+    if (id === eachMovie.imdbID ) {
+      result = eachMovie
+    }    
+  }
+return result 
+}
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
 
+const sumAllTheYears = function() {
+ let sum = 0 
+ for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    let eachYear = parseInt(eachMovie.Year);
+    sum =+ eachYear
+  }
+  return sum
+}
+
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
+let searchResult = [];
+const searchByTitle = function (aNewString) {
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    if (eachMovie.Title.indexOf(aNewString) !== -1) {
+      searchResult.push(eachMovie);
+    }
+  }
+  return searchResult;
+};
+// console.log(searchByTitle("Avengers"));
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
     this object should contain an array called "match", made by all the movies which contain the given string in the title,
     and another array "unmatch" with all the remaining ones.
 */
+const anObject = {
+  match : [],
+  unmatch : []
+}
+const searchAndDivide = function(newString) {
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    if (eachMovie.Title.indexOf(newString) !== -1) {
+      anObject.match.push(eachMovie);
+    } else  {
+      anObject.unmatch.push(eachMovie)
+    }
+   return anObject
+
+}
 
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
+moviesArr = []
+const removeIndex = function(aNum) {
+  for (let i = 0; i < movies.length; i++) {
+    let eachMovie = movies[i];
+    if (i !== aNum) {
+      moviesArr.push(eachMovie)
+    }
+
+    }
+return moviesArr
+}
 
 // [EXTRAS] JS Advanced
 
@@ -379,6 +493,14 @@ let countMovies = movies.length
   **
   ***
 */
+const halfTree = function(height) {
+  tree = 0
+  for (let i = 0; i < height; i++) {
+    
+    }
+
+}
+
 
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
@@ -392,8 +514,19 @@ let countMovies = movies.length
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
+const isItPrime = function(aPar) {
+  for (let i = 2; i < aPar; i++) {
+    if (aPar % i === 0 ) 
+    return false
+    }
+    return true
 
-/* This movies array is used throughout the exercises. Please don't change it :)  */
+    
+  }
+
+
+}
+/* This movies array is used throughout the exercises. Please don't change it :)  
 const movies = [
     {
       Title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -507,4 +640,4 @@ const movies = [
       Poster:
         "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
     },
-  ]
+  ]*/

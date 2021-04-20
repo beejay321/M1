@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        background-color: #888686;
+        font-family: "Poppins", sans-serif;
+        color: #1b1b1b;
+        max-width: 768px;
+        margin: 0 auto;
+        font-size: 18px;
+      }
 
-        body {
-            background-color: #888686;
-            font-family: "Poppins", sans-serif;
-            color: #1b1b1b;
-            max-width: 768px;
-            margin: 0 auto;
-            font-size: 18px;
-        }
+      h1 {
+        font-size: 64px;
+        font-weight: 800;
+        margin-bottom: 0;
+      }
+      #numberCells {
+        background-color: beige;
+        color: black;
+        width: 100%;
+        height: 600px;
+        border: 6px solid black;
+        border-radius: 8px;
+      }
 
-
-        h1 {
-            font-size: 64px;
-            font-weight: 800;
-            margin-bottom: 0;
-        }
-        #numberCells {
-            background-color:beige;
-            color: black;
-            width: 100%;
-            height: 600px;
-            border: 6px solid black;
-            border-radius: 8px;                      
-            
-        }
-
-        .number {
+      .number {
         display: inline-block;
-        position: relative; 
+        position: relative;
         width: 10.5%;
         text-align: center;
         height: 60px;
-        border: 1px solid ;
-        }
-        .selected {
+        border: 1px solid;
+      }
+      .selected {
         border: 1px solid #00ff84;
         border-radius: 6px;
-        }
-
-       
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>BINGO</h1>
-    <div id = "numberCells">
-        <!--number cells would be created here-->
-        <div class = "number"><h3></h3></div>         
+    <div id="numberCells">
+      <!--number cells would be created here-->
+      <div class="number"><h3></h3></div>
     </div>
-    
-
-    
-</body>
-<script>
+  </body>
+  <script>
     /*
         BINGO CHALLENGE!!!
         Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
@@ -70,38 +62,30 @@
         - Let the user choose HOW MANY user boards he's willing to play with and create them.
     */
 
-    window.onload = function() {
-        const numberOfCells = 76
-        let bingo = document.getElementById("numberCells");
+    window.onload = function () {
+      const numberOfCells = 76;
+      let bingo = document.getElementById("numberCells");
 
-        for (let i = 0; i < numberOfCells; i++) {       
-        
+      for (let i = 0; i < numberOfCells; i++) {
         const divChild = document.createElement("div");
         divChild.className = "number";
 
-
-        divChild.onclick = function (event) {        
-        event.currentTarget.classList.add("selected");
+        divChild.onclick = function (event) {
+          event.currentTarget.classList.add("selected");
         };
 
         let selected = document.querySelector(".selected");
 
-        if (selected) { 
+        if (selected) {
           selected.classList.remove("selected");
         }
 
-
         const cellNum = document.createElement("h3");
-        cellNum.innerText = i + 1
+        cellNum.innerText = i + 1;
 
         divChild.appendChild(cellNum);
         bingo.appendChild(divChild);
-
-        }
-
-
-
-    }
-
-</script>
+      }
+    };
+  </script>
 </html>
