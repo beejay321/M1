@@ -86,6 +86,12 @@
         .d-none {
             display: none;
         }
+        .tDbackground {
+            background-color: brown;
+        }
+        .pinkBorder {
+            border: solid pink;
+        }
 
     </style>
 </head>
@@ -315,12 +321,73 @@ const deleteLast = function() {
 deleteLast()
 //46) Change a single TD background color when the user clicks on it
 const changeTDbackground = function() {
+    let Tds = document.querySelectorAll("td")
+    for (let i = 0; i<Tds.length; i++) {
+        Tds[i].onclick = function() {            
+             Tds[i].classList.toggle("tDbackground")            
+        }
+    }
+}
+changeTDbackground()
+//47) Add a button DELETE, on click it should delete a random TD from the page
+
+
+
+const deleteRandom = function() {
+    let delBtn = document.createElement("button")
+    delBtn.innerText = "Delete TD"
+    let body = document.querySelector("body")
+    body.appendChild(delBtn)
+    delBtn.onclick = function () {
+        let allTds = document.querySelectorAll("td")
+        let randomTd = Math.floor(Math.random() * allTds.length)
+        allTds[randomTd].remove()
+        
+
+    }
     
 }
-//47) Add a button DELETE, on click it should delete a random TD from the page
+deleteRandom()
+
 //48) Add a pink border to a cell when the mouse is over it
+const pinkBorder = function() {
+let cells = document.querySelectorAll("td")
+for (let i = 0; i<cells.length; i++) {
+    let cell = cells[i]
+    cell.onmouseover = function() {
+        cell.classList.add("pinkBorder")
+    }
+    cell.onmouseleave = function() {
+        cell.classList.remove("pinkBorder")
+    }
+}
+}
+pinkBorder()
 //49) Write a function to add a table with 4 rows and 3 columns programmatically
+const addTable = function() {
+    let body = document.querySelector("body")
+    let table= document.createElement("table")
+    table.classList.add("newTable")
+    let parent = document.createElement("tbody")
+    for (let i = 0; i<4; i++) {
+        let row = document.createElement("tr")
+        parent.appendChild(row)
+        for (let j = 0; j<3; j++) {
+            let column = document.createElement("td")
+            column.innerText = j+1
+             row.appendChild(column)
+        }
+    }
+    table.appendChild(parent)
+    body.appendChild(table)
+}
+addTable()
 //50) Write a function to remove the table from the page-->
+const removeTable = function() {
+    let table = document.querySelector(".newTable")
+    table.classList.add("d-none")
+}
+// removeTable()
 
     </script>
 
